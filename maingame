@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RCA ONLINE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Outfit:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            touch-action: manipulation;
+            user-select: none;
+        }
+
+        .title-font {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+
+        /* Glassmorphic elements */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Power slider glow */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #f59e0b;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+            border: 2px solid #ffffff;
+        }
+
+        canvas {
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center p-2 sm:p-4 overflow-x-hidden">
+
+    <!-- Navigation / Top Bar -->
+    <header class="w-full max-w-6xl flex justify-between items-center py-2 px-4 glass-panel rounded-2xl mb-2">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-2xl shadow-lg shadow-amber-500/30">
+                🎯
+            </div>
+            <div>
+                <h1 class="text-xl sm:text-2xl title-font bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-clip-text text-transparent">
+                    RCA ONLINE
+                </h1>
+                <p class="text-xs text-slate-400 hidden sm:block">Professional Board Simulation</p>
+            </div>
+        </div>
+
+        <!-- Controls / Actions -->
+        <div class="flex items-center space-x-2">
+            <button id="soundToggleBtn" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition text-sm flex items-center space-x-2 border border-slate-700">
+                <i id="soundIcon" class="fas fa-volume-up text-amber-400"></i>
+                <span class="hidden sm:inline text-xs font-semibold">Sound</span>
+            </button>
+            <button id="customBtn" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition text-sm flex items-center space-x-2 border border-slate-700">
+                <i class="fas fa-palette text-blue-400"></i>
+                <span class="hidden sm:inline text-xs font-semibold">Theme</span>
+            </button>
+            <button id="rulesBtn" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition text-sm flex items-center space-x-2 border border-slate-700">
+                <i class="fas fa-book-open text-emerald-400"></i>
+                <span class="hidden sm:inline text-xs font-semibold">Rules</span>
+            </button>
+            <button id="resetMatchBtn" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/30 transition text-sm flex items-center space-x-1">
+                <i class="fas fa-rotate-left"></i>
+                <span class="hidden sm:inline text-xs font-semibold">Reset</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start justify-center gap-4 my-auto">
+
+        <!-- Left Info Panel (Score, Turn, Mode) -->... (4 KB left)
